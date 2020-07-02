@@ -1,5 +1,5 @@
 import scrapy
-from datetime import datetime
+from datetime import datetime, timedelta
 from . import github_uploader as uploader
 
 class GrayscaleScrapy(scrapy.Spider):
@@ -35,8 +35,9 @@ class GrayscaleScrapy(scrapy.Spider):
 
     def save(self):
         filename = self.FILENAME
-        date = datetime.today().strftime('%d/%m/%Y')
-        line = date + ',' + str(self.shares) + ',' + str(self.btcPerShare) + '\n'
+        date = datetime.today() - timedelta(days = 1)
+        dateString = date.strftime('%d/%m/%Y')
+        line = dateString + ',' + str(self.shares) + ',' + str(self.btcPerShare) + '\n'
 
         with open(filename, 'a') as f:
             f.write(line)

@@ -7,7 +7,7 @@ The purpose of scrape and save this information is for know how many bitcoins ar
 The script scrape the needed information from the corresponding website. Then, it saves that info in a CSV file, so you can view it like a calc sheet.  
 Besides, when the CSV is saved, it is uploaded to a Github repository.  
 
-If you don't want to run by yourself this script, you can see the next CSV. It's generated and updated by a Raspberry Pi every day at 2:00 UTC.
+If you don't want to run by yourself this script, you can see the next CSV. It's generated and updated by a Raspberry Pi every day at 3:00 UTC.
 https://github.com/bofavom/grayscale_bitcoin_shares/blob/master/grayscale_bitcoin.csv
 
 ## Requirements
