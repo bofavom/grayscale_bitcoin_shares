@@ -1,6 +1,8 @@
+import os
 from github import Github
 
-g = Github('f713917873d849cda706e7c09fa3070801d6cc4a')
+token = os.environ.get('GITHUB_TOKEN')
+g = Github(token)
 
 repo = g.get_repo('bofavom/grayscale_bitcoin_shares')
 
