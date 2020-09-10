@@ -9,3 +9,4 @@ requests==2.24.0
 requests-toolbelt==0.9.1
 setuptools==50.3.0
 urllib3==1.25.10
+PyGithub==1.53
