@@ -7,10 +7,10 @@ def checkGrayscale():
      try:
         grayscale_csv = 'grayscale_bitcoin.csv'
         scraper = cloudscraper.create_scraper()
-        r = scraper.get("https://grayscale.co/bitcoin-trust/")
+        r = scraper.get("https://grayscale.com/products/grayscale-bitcoin-trust/")
         tree = html.fromstring(r.text)
-        shares = tree.xpath('//table[@class="overview-data"]/tr/td[text() = "Shares Outstanding"]')[0].getparent()[1].text[:-1].replace(',', '')
-        btcpershare = tree.xpath('//table[@class="overview-data"]/tr/td[text() = "Bitcoin per Share"]')[0].getparent()[1].text[:-1].replace(',', '')
+        shares = tree.xpath('//span[@data-title="Shares Outstanding"]')[0].text[:-1].replace(',', '')
+        btcpershare = tree.xpath('//span[@data-title="Token per Share"]')[0].text[:-1].replace(',', '')
         
 
         date = datetime.today() - timedelta(days = 1)
