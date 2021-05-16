@@ -4,13 +4,13 @@ from datetime import datetime, timedelta
 from github_uploader import updateFile
 
 def checkGrayscale():
-     try:
+      try:
         grayscale_csv = 'grayscale_bitcoin.csv'
         scraper = cloudscraper.create_scraper()
         r = scraper.get("https://grayscale.com/products/grayscale-bitcoin-trust/")
         tree = html.fromstring(r.text)
         shares = tree.xpath('//span[@data-title="Shares Outstanding"]')[0].text[:-1].replace(',', '')
-        btcpershare = tree.xpath('//span[@data-title="Token per Share"]')[0].text[:-1].replace(',', '')
+        btcpershare = tree.xpath('//span[@data-title="BTC per Share"]')[0].text[:-1].replace(',', '')
         
 
         date = datetime.today() - timedelta(days = 1)
@@ -23,7 +23,7 @@ def checkGrayscale():
 
         updateFile(grayscale_csv)
 
-     except Exception as err:
-        print ("Error: {err}")
+      except Exception as err:
+        print (err)
 
 checkGrayscale()
