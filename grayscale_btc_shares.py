@@ -21,8 +21,6 @@ def checkGrayscale():
             f.write(line)        
         f.close()
 
-        updateFile(grayscale_csv)
-
       except Exception as err:
         print (err)
 
