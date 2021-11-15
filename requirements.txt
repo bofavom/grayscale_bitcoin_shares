@@ -3,7 +3,7 @@ chardet==3.0.4
 cloudscraper==1.2.46
 idna==2.10
 lxml==4.5.2
-pip==20.2.3
+pip==21.1
 pyparsing==2.4.7
 requests==2.24.0
 requests-toolbelt==0.9.1
